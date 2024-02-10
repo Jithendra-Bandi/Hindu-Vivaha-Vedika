@@ -1,0 +1,11 @@
+com\example\demo\DemoApplication.class
+com\example\demo\Secure\SecureConfig.class
+com\example\demo\Secure\MyUserDetailsService.class
+com\example\demo\Profile\Repository\MainProfileJpaRepository.class
+com\example\demo\Profile\Model\MainProfile.class
+com\example\demo\Profile\Model\ProfileDetails.class
+com\example\demo\Profile\Repository\ProfileDetailsJpaRepository.class
+com\example\demo\Secure\UserPrinciple.class
+com\example\demo\Profile\ProfileController.class
+com\example\demo\Profile\ProfileService.class
+com\example\demo\Profile\Repository\ProfileRepository.class

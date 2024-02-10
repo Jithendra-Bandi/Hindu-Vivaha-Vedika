@@ -1,0 +1,80 @@
+/* body {
+    padding-top:10vh;
+} */
+.title {
+    height:15vh;
+}
+#showCase {
+    height:85vh;
+    display:flex;
+    flex-direction: column;
+    overflow-y:scroll;
+}
+.home-container {
+    background-color:rgb(134, 187, 203);
+    padding: 15px;
+}
+
+.sitaram-image {
+    height:50px;
+    border-radius:50px;
+    margin-right:10px
+}
+.title-container {
+    background-color: lightblue;
+    border-radius:6px;
+}
+.home-heading {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.input-box {
+    border-width:0px;
+    border-radius:6px;
+    margin:3px;
+    padding:3px;
+    width:100%;
+}
+.search-icon {
+    margin-top:15px;
+    background-color:white;
+    border-radius:700px;
+    width:30px;
+    height:30px;
+    padding-left:5px;
+    padding-top:3px;
+    border:0px;
+    margin-left:5px;
+}
+
+.select-box {
+    border-width:0px;
+    border-radius:6px;
+    margin:3px;
+    margin-bottom:8px;
+    padding:3px;
+    width:80%;
+}
+
+.arrow {
+    border-radius:100px;
+    padding:10px;
+}
+
+.profile-container {
+    background-color:white;
+    border-radius:15px
+}
+
+.profile-image {
+    max-height:60vh;
+    border-radius:20px;
+    margin:auto;
+    max-width:85%;
+}
+
+#validationErrorMessage {
+    text-align: center;
+    color: blue;
+    background-color:aquamarine;
+    margin-top: 8px;
+}

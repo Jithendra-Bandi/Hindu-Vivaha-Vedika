@@ -1,0 +1,52 @@
+.sitaram-image {
+    height:50px;
+    border-radius:50px;
+    margin-right:10px
+}
+.title-container {
+    background-color: lightblue;
+    border-radius:6px;
+}
+.home-heading {
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.home-container {
+    background-image: linear-gradient(rgb(72, 171, 143),rgb(96, 75, 188));
+}
+.label {
+    color:white
+}
+.color-specify {
+    color:rgb(215, 197, 231);
+}
+.icon-image {
+    height:30px;
+    border-radius:50px;
+}
+.small {
+    height:37px;
+}
+.input-box {
+    border-width:0px;
+    border-radius:6px;
+    margin:3px;
+    padding:3px;
+    width:100%;
+}
+.select-box {
+    border-width:0px;
+    border-radius:6px;
+    margin:3px;
+    padding:3px;
+    width:100%;
+}
+.error-display {
+    border:4px solid red;
+}
+#validationErrorMessage {
+    text-align: center;
+    color: blue;
+    background-color:aquamarine;
+    margin-top: 8px;
+}

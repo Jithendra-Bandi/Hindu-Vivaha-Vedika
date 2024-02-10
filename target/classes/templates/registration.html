@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindu Vivaha Vedika Registration Form</title>
+</head>
+<body>
+    <!-- Registration Application -->
+    <div class="home-container p-4">
+        <!-- Application Heading -->
+        <div class="title-container mb-4 p-2 d-flex flex-row justify-content-center">
+            <img class="sitaram-image" src="/images/sitaramPicture.jpg"/>
+            <h1 class="mt-2 home-heading">Hindu Vivaha vedika</h1>
+        </div>
+        <div onclick="getLoginForm()" class="text-center mb-5">
+            <button class="btn" style="background-color:white; padding:10px; border-radius: 10px; font-family: 'Courier New', Courier, monospace; font-weight:bold; color:green;">Alreay Have an Account? <span style="color:red">Login Here!!</span></button>
+        </div>
+        
+        <!-- Form -->
+        <form id="form" action="/profiles" method="POST" enctype="multipart/form-data">
+            <!-- Gender -->
+            <div class="d-flex flex-row justify-content-around">
+                <div>
+                    <img src="/images/groomImage.jpg" class="icon-image"/>
+                    <input  type="radio" value="Male" name="gender" id="male"  />
+                    <label id="maleLabel" for="male" class="mr-3 label">Varudu</label>
+                </div>
+                <div>
+                    <img src="/images/brideImage.png" class="icon-image"/>
+                    <input type="radio" value="Female" name="gender" id="female" />
+                    <label id="femaleLabel" for="female" class="mr-3 label">Vadhuvu</label><br/>
+                </div>
+            </div>
+
+            <!-- Name -->
+            <div class="mt-3">
+                <div class="row mb-2">
+                    <div class="col">
+                        <lable  for="firstName" class="label">First Name</lable>
+                        <input maxlength="25" class="input-box" type="text" name="firstName" placeholder="Enter first name" id="firstName"/>   
+                    </div>
+                    <div class="col">
+                        <lable for="lastName" class="label">Last Name</lable>
+                        <input maxlength="25"  class="input-box" type="text" name="lastName" placeholder="Enter last name" id="lastName"/>
+                    </div>
+                </div>
+                <div>
+                    <lable for="fatherName" class="label">Father Name</lable>
+                    <input maxlength="25" class="input-box mb-3" type="text" name="fatherName" placeholder="Enter Father Name" id="fatherName"/>
+                </div>
+                <div>
+                    <lable for="motherName" class="label">Mother Name</lable>
+                    <input maxlength="25" class="input-box mb-3" type="text" name="motherName" placeholder="Enter Mother Name" id="motherName"/>
+                </div>
+            </div>
+
+            <!-- Date of Birth -->
+            <div>
+                <lable for="dob" class="label">Date of Birth</lable><br />
+                <!-- <input type="date" class="input-box"/> -->
+                <div class="m-2 row">
+                    <div class="col-4">
+                        <select  class="select-box" id="date" name="birthDate">
+                            <option value="">Date</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <select  class="select-box" id="month" name="birthMonth">
+                            <option value="">Month</option>
+                            <option value="Jan">Jan</option>
+                            <option value="Feb">Feb</option>
+                            <option value="Mar">Mar</option>
+                            <option value="Apr">Apr</option>
+                            <option value="May">May</option>
+                            <option value="Jun">Jun</option>
+                            <option value="Jul">Jul</option>
+                            <option value="Aug">Aug</option>
+                            <option value="Sep">Sep</option>
+                            <option value="Oct">Oct</option>
+                            <option value="Nov">Nov</option>
+                            <option value="Dec">Dec</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <select  class="select-box" id="year" name="birthYear">
+                            <option value="">Year</option>
+                        </select>
+                    </div>
+                </div> 
+            </div>
+
+            <!-- Rasi & Nakshitram -->
+            <div class="mt-3">
+                <lable for="rasiNakshitram" class="label">Rasi & Nakshitram</lable>
+                <select  class="select-box mb-3 mr-3" id="rasiNakshitram" name="rasiNakshitram">
+                    <option value="">Choose...</option>
+                    <option value="Don't Know">Don't Know</option>
+                    <option value="Mesham-Aswini">Mesham-Aswini</option>
+                    <option value="Mesham-Bharani">Mesham-Bharani</option>
+                    <option value="Mehsam-Kruthika-1">Mehsam-Kruthika-1</option>
+                    <option value="Vrushabam-Kruthika-2,3,4">Vrushabam-Kruthika-2,3,4</option>
+                    <option value="Vrushabam-Rohini">Vrushabam-Rohini</option>
+                    <option value="Vrushabam-Mrugasira-1,2">Vrushabam-Mrugasira-1,2</option>
+                    <option value="Midhunam-Mrugasira-3,4">Midhunam-Mrugasira-3,4</option>
+                    <option value="Midhunam-Arudra">Midhunam-Arudra</option>
+                    <option value="Midhuanam-Punarvasu-1,2,3">Midhuanam-Punarvasu-1,2,3</option>
+                    <option value="Karkatakam-Punarvasu-4">Karkatakam-Punarvasu-4</option>
+                    <option value="Karkatakam-Pushyami">Karkatakam-Pushyami</option>
+                    <option value="Karkatakam-Aslesa">Karkatakam-Aslesa</option>
+                    <option value="Simham-Maka">Simham-Maka</option>
+                    <option value="Simham-Pubba">Simham-Pubba</option>
+                    <option value="Simham-Uttara-1">Simham-Uttara-1</option>
+                    <option value="Kanya-Uttara-2,3,4">Kanya-Uttara-2,3,4</option>
+                    <option value="Kanya-Hasta">Kanya-Hasta</option>
+                    <option value="Kanya-Chitta-1,2">Kanya-Chitta-1,2</option>
+                    <option value="Tula-Chitta-3,4">Tula-Chitta-3,4</option>
+                    <option value="Tula-Swati">Tula-Swati</option>
+                    <option value="Tula-Visaka-1,2,3">Tula-Visaka-1,2,3</option>
+                    <option value="Vruchikam-Visaka-4">Vruchikam-Visaka-4</option>
+                    <option value="Vruchikam-Anuradha">Vruchikam-Anuradha</option>
+                    <option value="Vruchikam-Jyasta">Vruchikam-Jyasta</option>
+                    <option value="Dhanashu-Mula">Dhanashu-Mula</option>
+                    <option value="Dhanashu-Purvashada">Dhanashu-Purvashada</option>
+                    <option value="Dhanashu-Uttarashada-1">Dhanashu-Uttarashada-1</option>
+                    <option value="Makaram-Uttarashada-2,3,4">Makaram-Uttarashada-2,3,4</option>
+                    <option value="Makaram-Shravanam">Makaram-Shravanam</option>
+                    <option value="Makaram-Danista-1,2">Makaram-Danista-1,2</option>
+                    <option value="Kumbam-Dhanista-3,4">Kumbam-Dhanista-3,4</option>
+                    <option value="Kumbam-Shatabisham">Kumbam-Shatabisham</option>
+                    <option value="Kumbam-Purvabadhra-1,2,3">Kumbam-Purvabadhra-1,2,3</option>
+                    <option value="Meenam-Purvabadhra-4">Meenam-Purvabadhra-4</option>
+                    <option value="Meenam-Uttarabadhra">Meenam-Uttarabadhra</option>
+                    <option value="Meenam-Revathi">Meenam-Revathi</option>
+                </select>
+            </div>
+
+            <!-- Height -->
+            <div class="row mt-2">
+                <lable class="label mr-2">Height</lable>
+                <div class="col">
+                    <label class="mr-3 color-specify" for="foot">Feet</label> 
+                    <select  id="feet" name="feet" class="select-box mb-3">
+                        <option value="">Feet</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="mr-3 color-specify" for="inch">Inch</label><br/>
+                    <select  id="inch" name="inch" class="mb-3 select-box">
+                        <option value="">Inch</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Cast -->
+            <div class="m-1">
+                <label class="label">Caste</label>
+                <div class="row">
+                    <div class="col-4">
+                        <select  class="select-box" id="casteGeneral" name="casteGeneral">
+                            <option value="">Select</option>
+                            <option value="OC">OC</option>
+                            <option value="BC">BC</option>
+                            <option value="SC">SC</option>
+                            <option value="ST">ST</option>
+                        </select>
+                    </div>
+                    <div class="col-8">
+                        <input maxlength="20" class="input-box" type="text" id="caste" name="caste" placeholder="Specify Cast"/>
+                    </div>
+                    <div class="col-8 mt-2">
+                        <input maxlength="20" class="input-box" type="text" id="subCaste" name="subCaste" placeholder="Sub caste"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="mt-1 mb-1">
+                <lable for="education" class="label">Education</lable>
+                <input maxlength="20" class="input-box" type="text" name="education" placeholder="Enter Qualification" id="education"/>
+            </div>
+
+            <!-- Occupation and Place -->
+            <div class="mt-3">
+                <div>
+                    <lable for="occupation" class="label">Occupation</lable>
+                    <select  class="select-box" id="occupation" name="occupation">
+                        <option value="">Choose...</option>
+                        <option value="No Job">No Job</option>
+                        <option value="IT & Software">IT & Software</option>
+                        <option value="Business">Business</option>
+                        <option value="Executive">Executive</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Supervisor">Supervisor</option>
+                        <option value="Officer">Officer</option>
+                        <option value="Engineer - Non IT">Engineer - Non IT </option>
+                        <option value="Technician">Technician</option>
+                        <option value="Clerk">Clerk</option>
+                        <option value="Marketing Professional">Marketing Professional</option>
+                        <option value="Administration">Administration</option>
+                        <option value="Agriculture">Agriculture</option>
+                        <option value="Airline">Airline</option>
+                        <option value="Architecture & Design">Architecture & Design</option>
+                        <option value="Banking & Finance">Banking & Finance</option>
+                        <option value="Beauty & Fashion">Beauty & Fashion</option>
+                        <option value="BPO & Customer Service">BPO & Customer Service</option>
+                        <option value="Civil Services">Civil Services</option>
+                        <option value="Corporate Professionals">Corporate Professionals</option>
+                        <option value="Defence">Defence</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Education & Training">Education & Training</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Hospitality">Hospitality</option>
+                        <option value="Legal">Legal</option>
+                        <option value="Media & Entertainment">Media & Entertainment</option>
+                        <option value="Medical & HealthCare - Other">Medical & HealthCare - Other</option>
+                        <option value="Merchant Navy">Merchant Navy</option>
+                        <option value="Police/ Law Enforcement">Police/ Law Enforcement</option>
+                        <option value="Scientist">Scientist</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <input class="input-box mt-3" maxlength="15" name="occupationRole" placeholder="Role (optional)"/>
+                </div>
+    
+                <div class="mb-2">
+                    <label class="label mt-3">Place of Occupation</label><br/>
+                    <input checked type="radio" name="occupationPlace" value="India" id="india"/>
+                    <label id="indiaLabel" class="label" for="india">India</label>
+                    <input type="radio" name="occupationPlace" value= "Other Country" id="otherCountry"/>
+                    <label id="otherCountryLabel" class="label" for="otherCountry">Other Country</label>
+                </div>
+                <div class="row" id="indiaDisplay">
+                    <div class="col">
+                        <div>
+                            <select id="occupationState" class="select-box" name="occupationState">
+                                    <option value="">Choose State...</option>
+                                    <option value="Andaman & Nicobar">Andaman & Nicobar</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chandigarh">Chandigarh</option>
+                                    <option value="Chattisgarh">Chattisgarh</option>
+                                    <option value="Dadra & Nagar Haveli">Dadra & Nagar Haveli</option>
+                                    <option value="Daman & Diu">Daman & Diu</option>
+                                    <option value="Delhi/NCR">Delhi/NCR</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                                    <option value="Jarkhand">Jarkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Lakshadweep">Lakshadweep</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharastra">Maharastra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Orissa">Orissa</option>
+                                    <option value="Pondicherry">Pondicherry</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
+                            </select>
+                        </div>  
+                    </div>
+                    <div class="col">
+                        <input maxlength="15" class="input-box" type="text" placeholder="City Name" name="cityName" id="cityName"/>
+                    </div>
+                </div>
+                <div class="d-none row" id="otherCountryDisplay">
+                    <div class="col">
+                        <input maxlength="25" class="input-box" type="text" placeholder="Country Name" name="countryName" id="countryName"/>
+                    </div>
+                    <div class="col">
+                        <input maxlength="25" type="text" class="input-box" placeholder="State/City Name" id="otherCountryCityName" name="otherCountryCityName"/> 
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salary and Property Value -->
+            <div class="m-1">
+                <lable for="salary" class="label">Salary in LPA</lable>
+                    <select  class="select-box mb-3" id="salary" name="salary">
+                        <option value="">Choose...</option>
+                        <option value="Below 2">Below 2 Laksh</option>
+                        <option value="2-5 Laksh">2-5 Laksh</option>
+                        <option value="6-10 Laksh">6-10 Laksh</option>
+                        <option value="11-15 Laksh">11-15 Laksh</option>
+                        <option value="16-20 Laksh">16-20 Laksh</option>
+                        <option value="21-25 Laksh">21-25 Laksh</option>
+                        <option value="26-30 Laksh">26-30 Laksh</option>
+                        <option value="31-35 Laksh">31-35 Laksh</option>
+                        <option value="36-40 Laksh">36-40 Laksh</option>
+                        <option value="41-45 Laksh">41-45 Laksh</option>
+                        <option value="46-50 Laksh">46-50 Laksh</option>
+                        <option value="Above 50">Above 50 Laksh</option>
+                    </select>
+                
+                <div>
+                    <lable for="propertyValue" class="label">Property Value</lable>
+                    <select class="select-box" id="propertyValue" name="propertyValue">
+                        <option value="Optional">Optional</option>
+                        <option value="No Property">No Property</option>
+                        <option value="Below 5 Lakhs">Below 5 Lakhs</option>
+                        <option value="5-10 Lakhs">5-10 Lakhs</option>
+                        <option value="10-15 Lakhs">10-15 Lakhs</option>
+                        <option value="15-20 Lakhs">15-20 Lakhs</option>
+                        <option value="20-30 Lakhs">20-30 Lakhs</option>
+                        <option value="30-40 Lakhs">30-40 Lakhs</option>
+                        <option value="40-50 Lakhs">40-50 Lakhs</option>
+                        <option value="50-60 Lakhs">50-60 Lakhs</option>
+                        <option value="60-70 Lakhs">60-70 Lakhs</option>
+                        <option value="70-80 Lakhs">70-80 Lakhs</option>
+                        <option value="80-90 Lakhs">80-90 Lakhs</option>
+                        <option value="90 Lakhs - 1Cr">90 Lakhs - 1Cr</option>
+                        <option value="1-2 Cr">1-2 Cr</option>
+                        <option value="2-3 Cr">2-3 Cr</option>
+                        <option value="3-4 Cr">3-4 Cr</option>
+                        <option value="4-5 Cr">4-5 Cr</option>
+                        <option value="5-10 Cr">5-10 Cr</option>
+                        <option value="10-15 Cr">10-15 Cr</option>
+                        <option value="15-20 Cr">15-20 Cr</option>
+                        <option value="20-25 Cr">20-25 Cr</option>
+                        <option value="25-30 Cr">25-30 Cr</option>
+                        <option value="30-35 Cr">30-35 Cr</option>
+                        <option value="35-40 Cr">35-40 Cr</option>
+                        <option value="40-45 Cr">40-45 Cr</option>
+                        <option value="45-50 Cr">45-50 Cr</option>
+                        <option value="Above 50 Cr">Above 50 Cr</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Siblings -->
+            <div class="mt-3">
+                <label class="mr-2 label">Siblings:</label><br/>
+                <div class="row">
+                    <div class="col">
+                        <label class="color-specify" for="brothers">Brothers</label>
+                        <select class="select-box" id="brothers" name="numberOfBrothers">
+                            <option value="">Select</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <ol class="color-specify" id="brothersList"></ol>
+                    </div>
+                    <div class="col">
+                        <label class="color-specify ml-3" for="sisters">Sisters</label>
+                        <select class="select-box" id="sisters" name="numberOfSisters">
+                            <option value="">Select</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <ol class="color-specify" id="sistersList"></ol>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Address -->
+            <div class="m-1">
+                <label class="label">Address:</label><br/>
+                <div class="row">
+                    <div class="col-4">
+                        <input maxlength="40" class="input-box mb-1" type="text" placeholder="D.No:" id="doorNo" name="doorNo"/>
+                    </div>
+                    <div class="col-8">
+                        <input maxlength="40" class="input-box mb-1" type="text" placeholder="Street Name" id="streetName" name="streetName"/>
+                    </div>
+                </div>
+                <input maxlength="40" class="input-box mb-1" type="text" placeholder="Village/Town" id="village" name="village"/>
+                <div class="row">
+                    <div class="col">
+                        <select  class="select-box mb-1" id="nativeState" name="nativeState">
+                            <option value="">Choose State...</option>
+                            <option value="Andaman & Nicobar">Andaman & Nicobar</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chattisgarh">Chattisgarh</option>
+                            <option value="Dadra & Nagar Haveli">Dadra & Nagar Haveli</option>
+                            <option value="Daman & Diu">Daman & Diu</option>
+                            <option value="Delhi/NCR">Delhi/NCR</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                            <option value="Jarkhand">Jarkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharastra">Maharastra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Orissa">Orissa</option>
+                            <option value="Pondicherry">Pondicherry</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                    </div>
+                    <div id="apChoose" class="col d-none">
+                        <select class="select-box" id="apDistrict" name="apDistrict">
+                            <option value="">Choose District...</option>
+                            <option value="Srikakulam">Srikakulam</option>
+                            <option value="Parvathipuram">Parvathipuram</option>
+                            <option value="Vizianagaram">Vizianagaram</option>
+                            <option value="Visakhapatnam">Visakhapatnam</option>
+                            <option value="Paderu">Paderu</option>
+                            <option value="Ankapalli">Ankapalli</option>
+                            <option value="Kakinada">Kakinada</option>
+                            <option value="East Godavari">East Godavari</option>
+                            <option value="Dr.B.R.Ambedkar Konaseema">Dr.B.R.Ambedkar Konaseema</option>
+                            <option value="Eluru">Eluru</option>
+                            <option value="West Godavari">West Godavari</option>
+                            <option value="NTR">NTR</option>
+                            <option value="Krishna">Krishna</option>
+                            <option value="Palnadu">Palnadu</option>
+                            <option value="Guntur">Guntur</option>
+                            <option value="Bapatla">Bapatla</option>
+                            <option value="Prakasam">Prakasam</option>
+                            <option value="Nellore">Nellore</option>
+                            <option value="Kurnool">Kurnool</option>
+                            <option value="Nandyal">Nandyal</option>
+                            <option value="Anantapur">Anantapur</option>
+                            <option value="Sri Sathya Sai">Sri Sathya Sai</option>
+                            <option value="YSR">YSR</option>
+                            <option value="Annamayya">Annamayya</option>
+                            <option value="Tirupati">Tirupati</option>
+                            <option value="Chittoor">Chittoor</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Native -->
+            <div class="">
+                <label class="label" for="nativeLocation">Native Location</label>
+                <input maxlength="20" placeholder="Native (Optional)" class="input-box" type="text" id="nativeLocation" name="nativeLocation"/>
+            </div>
+            
+            <!-- Mobile Number & Email -->
+            <div>
+                <div class="mt-2">
+                    <label class="label" for="mobileNumber">Mobile Number</label>
+                    <input maxlength="10" class="input-box" placeholder="Enter Mobile Number" id="mobileNumber" name="mobileNumber" type="tel" />
+                </div>
+                <div class="mt-2">
+                    <label class="label" for="mobilNumber2">Alternate Mobile Number</label>
+                    <input maxlength="10" class="input-box" placeholder="Alternate Mobile Number" id="alternateMobileNumber" name="alternateMobileNumber" type="tel" />
+                </div>
+                <div class="label mt-2">
+                    <label for="emailId">Enter Email Id</label>
+                    <input maxlength="40" class="input-box" placeholder="Enter Email Id" id="emailId" name="emailId" type="email" />
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div class="mt-3">
+                <label class="label" for="image">Upload Photo (jpg or png format only)</label>
+                <input name="file" type="file" class="input-box bg-white" id="image" >
+            </div>
+
+            <!-- Maritial Status & if Children -->
+            <div>
+                <div class="mt-3">
+                    <label class="label">Maritial Status</label>
+                    <select  class="select-box" id="maritialStatus" name="maritialStatus">
+                        <option value="">Choose...</option>
+                        <option value="Never Married">Never Married</option>
+                        <option value="Second Marraige">Second Marraige</option>
+                    </select>
+                </div>
+                <div id="noOfChildrenContainer" class="mt-3 d-none">
+                    <label class="label">Number of Children</label>
+                    <select class="select-box" id="noOfChildren" name="numberOfChildren">
+                        <option value="">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <!-- Password -->
+            <div>
+                <label for="checkPassword" class="label mt-3">Password for Your Account</label>
+                <div>
+                    <input maxlength="10" type="password" class="input-box" id="checkPassword" placeholder="Enter Password"/>
+                </div>
+                <div>
+                    <input maxlength="10" type="password" class="input-box" id="password" name="password" placeholder="Confirm Password"/>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-4 text-center">
+                <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <p id="validationErrorMessage"></p>
+            
+        </form>
+
+    </div>
+
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
